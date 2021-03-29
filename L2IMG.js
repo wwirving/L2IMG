@@ -1,7 +1,7 @@
-const searchTerm = 'teeth';
+const searchTerm = 'japanese traditional painting';
 const searchLimit = 50;
 
-const dir = './' + searchTerm + searchLimit.toString();
+const dir = searchTerm + searchLimit.toString();
 const Scraper = require('images-scraper');
 const fs = require('fs');
 const request = require('request');
@@ -34,6 +34,10 @@ const google = new Scraper({
   var link = results[i].url;
   download (link, filename, function(){
   })}
+  fs.appendFile('.gitignore', dir, function(err) {
+    if (err) throw err;
+    console.log('L2IMG Complete');
+  });
 })();
 
 
